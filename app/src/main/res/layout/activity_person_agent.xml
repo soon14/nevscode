@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_person_agent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nevs.car.activity.service.PersonAgentActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/n_view"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_high"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="@dimen/back_margin"
+                android:layout_height="match_parent"
+                android:id="@+id/back"
+                android:background="@drawable/btn_bowen"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/head_back"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/title_image_back_left_margin"
+                    />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textColor="@color/title_center"
+                android:text="@string/servce_one"
+                android:textSize="@dimen/title_txt_size"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@mipmap/fw_bannerc"
+            />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:background="@mipmap/fwnews_img"
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:background="#ffffff"
+            android:id="@+id/please_enters"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@+id/please_enter"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="@string/apply"
+                android:textSize="@dimen/btn"
+                android:clickable="true"
+                android:background="@drawable/btn_press"
+                android:layout_alignParentBottom="true"
+                />
+        </LinearLayout>
+
+
+
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/webview"
+            android:layout_above="@+id/please_enters"
+            >
+
+        </WebView>
+
+    </RelativeLayout>
+
+</LinearLayout>

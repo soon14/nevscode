@@ -1,0 +1,176 @@
+package com.nevs.car.tools.SharedPreferencesUtil;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.support.v4.content.SharedPreferencesCompat;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Created by mac on 2018/4/24.
+ */
+
+public class SharedPHelper {
+    private static SharedPreferences sharedPreferences;
+    /**
+     * 保存在手机里面的名字
+     */
+    public static final String FILE_NAME = "shareeasydata";
+    private static SharedPreferences.Editor editor;
+
+    public SharedPHelper(Context context) {
+        sharedPreferences = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+    }
+
+    /**
+     * 保存数据的方法，拿到数据保存数据的基本类型，然后根据类型调用不同的保存方法
+     *
+     * @param key
+     * @param object
+     */
+    public static void put(String key, Object object) {
+
+        if (object instanceof String) {
+            editor.putString(key, (String) object);
+        } else if (object instanceof Integer) {
+            editor.putInt(key, (Integer) object);
+        } else if (object instanceof Boolean) {
+            editor.putBoolean(key, (Boolean) object);
+        } else if (object instanceof Float) {
+            editor.putFloat(key, (Float) object);
+        } else if (object instanceof Long) {
+            editor.putLong(key, (Long) object);
+        } else {
+            editor.putString(key, object.toString());
+        }
+        //org.androidannotations.api.sharedpreferences.SharedPreferencesCompat.apply(editor);
+      //  editor.commit();
+        SharedPreferencesCompat.EditorCompat.getInstance().apply(editor);
+    }
+
+    /**
+     * 获取保存数据的方法，我们根据默认值的到保存的数据的具体类型，然后调用相对于的方法获取值
+     *
+     * @param key           键的值
+     * @param defaultObject 默认值
+     * @return
+     */
+
+    public static Object get(String key, Object defaultObject) {
+        if (defaultObject instanceof String) {
+            return sharedPreferences.getString(key, (String) defaultObject);
+        } else if (defaultObject instanceof Integer) {
+            return sharedPreferences.getInt(key, (Integer) defaultObject);
+        } else if (defaultObject instanceof Boolean) {
+            return sharedPreferences.getBoolean(key, (Boolean) defaultObject);
+        } else if (defaultObject instanceof Float) {
+            return sharedPreferences.getFloat(key, (Float) defaultObject);
+        } else if (defaultObject instanceof Long) {
+            return sharedPreferences.getLong(key, (Long) defaultObject);
+        } else {
+            return sharedPreferences.getString(key, null);
+        }
+
+    }
+
+    /**
+     * 移除某个key值已经对应的值
+     *
+     * @param key
+     */
+    public static void remove(String key) {
+        editor.remove(key);
+       // SharedPreferencesCompat.apply(editor);
+       // editor.commit();//同步提交
+        SharedPreferencesCompat.EditorCompat.getInstance().apply(editor);//异步提交
+    }
+
+    /**
+     * 清除所有的数据
+     */
+    public static void clear() {
+        editor.clear();
+        //SharedPreferencesCompat.apply(editor);
+       // editor.commit();
+        SharedPreferencesCompat.EditorCompat.getInstance().apply(editor);
+    }
+
+
+    //清除单个
+    public static void clearOne(Context context,String name) {
+        SharedPreferences preferences = context.getSharedPreferences(name, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.commit();
+    }
+
+
+    /**
+     * 查询某个key是否存在
+     *
+     * @param key
+     * @return
+     */
+    public static boolean contains(String key) {
+        return sharedPreferences.contains(key);
+    }
+
+    /**
+     * 返回所有的键值对
+     *
+     * @return
+     */
+    public static Map<String, ?> getAll() {
+        return sharedPreferences.getAll();
+    }
+
+
+
+    /**
+     * 历史记录功能
+     * 搜索记录
+     */
+    public SharedPHelper(Context context,String file_name) {
+        sharedPreferences = context.getSharedPreferences(file_name, Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+    }
+    public void historyInsert(String keyword) {//插入数据
+        LinkedHashSet<String> historySet = new LinkedHashSet<>();
+        String jsonString = sharedPreferences.getString("historyList", "");
+        LinkedHashSet<String> set =  new Gson().fromJson(jsonString, new TypeToken<LinkedHashSet<String>>() {}.getType());
+        if (set != null) {
+            historySet.addAll(set);
+        }
+        if (historySet.size() <= 15) {
+            historySet.add(keyword);
+        }
+        if (historySet.size() == 16) {
+            List<String> list = new ArrayList<>();
+            list.addAll(historySet);
+            Collections.reverse(list);
+            historySet.remove(list.get(list.size()-1));
+        }
+        sharedPreferences.edit().putString("historyList",new Gson().toJson(historySet)).apply();
+    }
+
+    public List<String> historyList() {//查询所有数据并返回LIST
+        String jsonString = sharedPreferences.getString("historyList", "");
+        LinkedHashSet<String> set = new Gson().fromJson(jsonString, new TypeToken<LinkedHashSet<String>>() {}.getType());
+        LinkedHashSet<String> historySet =  new LinkedHashSet<>();
+        if (set !=null) {
+            historySet.addAll(set);
+        }
+        List<String> historyList = new ArrayList<>();
+        historyList.addAll(historySet);
+        Collections.reverse(historyList);
+        return historyList;
+    }
+}

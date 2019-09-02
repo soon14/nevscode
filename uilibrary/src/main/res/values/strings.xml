@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">UILibrary</string>
+    <string name="ui_date">日期</string>
+    <string name="ui_cancel">取消</string>
+    <string name="ui_save">保存</string>
+    <string name="ui_select_date">选择日期</string>
+    <string name="ui_title">标题</string>
+    <string name="ui_loading">加载中...</string>
+    <string name="ui_year">%s 年</string>
+   <string name="ui_month">%s 月</string>
+    <string name="ui_day">%s 日</string>
+    <string name="ui_hour">%s 时</string>
+    <string name="ui_minute">%s 分</string>
+    <string name="ui_second">%s 秒</string>
+</resources>

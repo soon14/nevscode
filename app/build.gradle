@@ -1,0 +1,241 @@
+apply plugin: 'com.android.application'
+android {
+    signingConfigs {
+        config {
+            keyAlias 'cecar'
+            keyPassword 'ispy123456'
+            storeFile file("D:/ispr_workspeac/nevscode/nevscode/grelease.jks")
+            storePassword 'ispy123456'
+        }
+
+    }
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.nevs.car"
+        minSdkVersion 23
+        targetSdkVersion 26
+        versionCode 9
+        versionName "1.1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        ndk {
+            //cc  moduleName "jninevs"  //生成的so文件的名字，调用C程序的代码中会用到该名字
+            // cc  ldLibs "log","z","m"
+            //ldLibs "log"
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi-v7a'
+            // 还可以添加 'x86_64', 'mips', 'mips64', 'armeabi','armeabi-v7a','arm64-v8a','x86'
+        }
+        externalNativeBuild {
+            cmake {
+                cppFlags "-frtti -fexceptions"
+            }
+        }
+    }
+    buildTypes {
+        release {
+            //shrinkResources true//资源压缩
+            minifyEnabled true //打包时是否混淆
+            useProguard true //代码压缩
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //AS 3.1 的一个bug   原因是没有让 public class 这个公共类 implements java.lang.annotation.Annotation
+            lintOptions {
+
+                checkReleaseBuilds false
+
+                abortOnError false
+
+            }
+            signingConfig signingConfigs.config
+            debuggable true
+        }
+        debug {
+            debuggable true
+            zipAlignEnabled true
+            minifyEnabled false //是否混淆
+            shrinkResources false //是否去除无效的资源文件
+            minifyEnabled false //打包时是否混淆
+            useProguard false //代码压缩
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            if (keyfile.exists()) {
+            signingConfig signingConfigs.config
+//            }
+
+        }
+
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    aaptOptions { //图片后缀修改
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
+
+//    //ZZ
+//    flavorDimensions "default"
+//    compileOptions {
+//         sourceCompatibility JavaVersion.VERSION_1_8
+//         targetCompatibility JavaVersion.VERSION_1_8
+//         incremental false
+//         }
+
+
+}
+repositories {
+    maven { url "https://jitpack.io" }
+    // maven { url 'https://dl.bintray.com/wandersnail/android/' }
+
+    flatDir {
+        dirs 'libs'
+    }
+
+    //显示详细异常
+    // allprojects { gradle.projectsEvaluated { tasks.withType(JavaCompile) { options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation" } }}
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+
+    //        exclude group: 'com.android.support', module: 'support-annotations'
+
+    //    })
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:multidex:1.0.1'
+
+    //compile files('libs/volley.jar')
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+
+    //状态栏
+
+    //cc compile 'com.githang:status-bar-compat:latest.integration'
+    //implementation 'com.githang:status-bar-compat:0.7' //79
+    implementation 'com.gyf.barlibrary:barlibrary:2.2.9'
+    implementation 'com.tamic.novate:novate:1.5.5'
+
+    //1.5.4.5
+
+    // compile files('libs/AMap3DMap_6.1.0_AMapNavi_6.0.1_AMapSearch_6.1.0_AMapLocation_3.8.0_20180330.jar')
+
+    //轮播
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    //compile 'com.github.bumptech.glide:glide:4.0.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+    //Apollo依赖RxAndroid2,请使用最新的版本//相当于EVENTBUS效果
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    //Apollo的核心库
+    implementation 'com.github.lsxiao.Apollo:core:1.0.2'
+
+    //Apollo的编译时注解处理器
+    annotationProcessor "com.github.lsxiao.Apollo:processor:1.0.2"
+    implementation 'org.greenrobot:eventbus:3.0.0'
+
+    //IOS弹出框效果
+    implementation 'com.flyco.dialog:FlycoDialog_Lib:1.2.6@aar'
+    implementation 'com.nineoldandroids:library:2.4.0'
+
+
+//    debugApi 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+//
+//    releaseApi 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+//
+//
+//
+//    // 仅在debug包启用BlockCanary进行卡顿监控和提示的话，可以这么用
+//
+//    debugImplementation 'com.github.markzhai:blockcanary-android:1.5.0'
+//
+//    releaseImplementation 'com.github.markzhai:blockcanary-no-op:1.5.0'
+
+
+    //三方DIALOG
+//    implementation 'com.dou361.dialogui:jjdxm-dialogui:1.0.3'//uilibrary
+
+    //开源库 SwipeRecyclerView
+
+    //compile 'com.yanzhenjie:recyclerview-swipe:1.1.0'
+
+    //扫一扫
+
+    //compile'com.github.yuzhiqiang1993:zxing:2.1.8'
+    implementation 'com.google.zxing:core:3.2.1'
+    implementation 'com.journeyapps:zxing-android-embedded:3.3.0'
+
+    //微信分享
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.1.4'
+    implementation 'com.youth.banner:banner:1.4.10'
+
+    //最新版本
+
+    //webview缓存库
+    implementation 'ren.yale.android:cachewebviewlib:2.0.2'
+
+    //Subsampling Scale Image View 大图浏览库
+    implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.5.0'
+
+    //implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
+
+    //Android6.0权限申请界面
+
+    //compile 'me.weyye.hipermission:library:1.0.7'
+
+    //compile 'com.github.dfqin:grantor:2.1.0'
+
+    //AndPermission 库
+    implementation 'com.yanzhenjie.permission:support:2.0.1'
+
+    implementation 'com.gcssloop.widget:rclayout:1.8.1'
+
+    //友盟
+    implementation 'com.umeng.umsdk:analytics:8.0.0'
+    implementation 'com.umeng.umsdk:common:2.0.0'
+
+    //implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'com.github.barteksc:android-pdf-viewer:3.1.0-beta.1'
+    implementation 'io.github.zhitaocai:toastcompat:0.1.0'
+
+    //implementation'com.github.yanjiabin:ExtendsRingPrigressBar:1.1.1'
+    //JAR
+    implementation project(path: ':ocr_ui')
+
+    //compile files('libs/libammsdk.jar')
+    implementation files('src/main/jniLibs/bcprov-jdk16-139.jar')
+    implementation files('src/main/jniLibs/jcore-android-1.2.1.jar')
+    implementation files('src/main/jniLibs/jpush-android-3.1.3.jar')
+    implementation files('src/main/jniLibs/ocr-sdk.jar')
+    implementation files('src/main/jniLibs/pushservice-5.6.0.30.jar')
+    implementation files('src/main/jniLibs/volley.jar')
+    implementation files('src/main/jniLibs/BASE64.jar')
+    implementation files('src/main/jniLibs/AMap3DMap_6.8.0_AMapNavi_6.7.0_AMapSearch_6.5.0_AMapLocation_4.6.0_20190423.jar')
+    implementation files('src/main/jniLibs/tbs_sdk_thirdapp_v3.6.0.1310_43612_sharewithdownload_withoutGame_obfs_20180706_163319.jar')
+    implementation project(path: ':uilibrary')
+//    compileTex 'com.github.moduth:blockcanary-android:1.2.1'  ANR检测
+}

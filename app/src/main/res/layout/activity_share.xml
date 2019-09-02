@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_share"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nevs.car.activity.my.ShareActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/n_view"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_high"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="@dimen/back_margin"
+                android:layout_height="match_parent"
+                android:id="@+id/back"
+                android:background="@drawable/btn_bowen"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/head_back"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/title_image_back_left_margin"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textColor="@color/n_333333"
+                android:text="@string/shareto"
+                android:textSize="@dimen/title_txt_size"/>
+
+            <LinearLayout
+                android:background="#c4c4c4"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@mipmap/sharef"
+            android:id="@+id/imagetop"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/zxing_nevs"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/imagetop"
+            android:layout_marginTop="80dp"
+            android:id="@+id/zxing"
+            android:visibility="visible"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/zxing"
+            android:layout_marginTop="30dp"
+            android:text="@string/longclickmap"
+            android:textSize="14sp"
+            android:id="@+id/zing"
+            android:textColor="@color/android_defalt"
+            android:visibility="visible"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/zing"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            android:text="@string/nevs_sharefriends"
+            android:gravity="center"
+            android:textColor="@color/android_defalt"
+            android:visibility="visible"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+            android:id="@+id/center"
+            android:visibility="invisible"
+            />
+        <LinearLayout
+            android:id="@+id/id_py"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/center"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/btn_bowens"
+            android:layout_marginRight="22dp"
+            android:visibility="gone"
+            >
+
+
+            <ImageView
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:background="@mipmap/my_wxhy"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nevs_weixingfriend"
+                android:textSize="12sp"
+                android:layout_marginTop="13dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_pyquan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/btn_bowens"
+            android:layout_toRightOf="@+id/center"
+            android:layout_marginLeft="22dp"
+            android:visibility="gone"
+            >
+
+
+            <ImageView
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:background="@mipmap/my_wxpyq"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nevs_weixingfriends"
+                android:textSize="12sp"
+                android:layout_marginTop="13dp"
+                />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

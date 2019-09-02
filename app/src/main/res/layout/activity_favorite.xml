@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_bind_get"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/activity_background"
+    tools:context="com.nevs.car.activity.gmap.FavoriteActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/n_view"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_high"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="@dimen/back_margin"
+                android:layout_height="match_parent"
+                android:id="@+id/back"
+                android:background="@drawable/btn_bowen"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/head_back"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/title_image_back_left_margin"
+                    />
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textColor="@color/n_333333"
+                android:text="@string/favorite"
+                android:textSize="@dimen/title_txt_size"/>
+
+            <LinearLayout
+                android:background="#c4c4c4"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#eaeaea"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textColor="@color/n_777777"
+            android:textSize="14sp"
+            android:text="@string/favorite"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textColor="@color/n_777777"
+            android:textSize="14sp"
+            android:text="@string/delete"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:id="@+id/clear"
+            android:background="@drawable/btn_bowens"
+            />
+    </RelativeLayout>
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/cartypeone"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/item_height">-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:textColor="@color/android_defalt"-->
+            <!--android:textSize="@dimen/item_text_size"-->
+            <!--android:text="@string/nevs_sixbridge"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--/>-->
+        <!--<RelativeLayout-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="45dp"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--&gt;-->
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@mipmap/dh_close"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_marginRight="15dp"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--/>-->
+
+        <!--</RelativeLayout>-->
+
+    <!--</RelativeLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:background="@color/item_line"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/item_line_height"/>-->
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/get_rel"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/item_height">-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:textColor="@color/android_defalt"-->
+            <!--android:textSize="@dimen/item_text_size"-->
+            <!--android:text="@string/nevs_truction_bank"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--/>-->
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:background="@mipmap/dh_close"-->
+            <!--android:layout_marginRight="15dp"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--/>-->
+
+    <!--</RelativeLayout>-->
+    <!--<LinearLayout-->
+        <!--android:background="@color/item_line"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/item_line_height"/>-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_title"
+        >
+        <com.nevs.car.adapter.xrefreshview.XRefreshView
+            android:id="@+id/xrefresh_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:scrollbars="vertical" />
+        </com.nevs.car.adapter.xrefreshview.XRefreshView>
+        <include layout="@layout/public404"/>
+    </RelativeLayout>
+
+</LinearLayout>
+

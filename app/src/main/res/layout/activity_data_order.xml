@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_data_order"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nevs.car.activity.my.DataOrderActivity">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/n_view"
+    android:background="@color/white"
+    >
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_high"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="@dimen/back_margin"
+            android:layout_height="match_parent"
+            android:id="@+id/back"
+            android:background="@drawable/btn_bowen"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/head_back"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/title_image_back_left_margin"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/n_333333"
+            android:text="@string/data_order"
+            android:textSize="@dimen/title_txt_size"/>
+
+    </RelativeLayout>
+</RelativeLayout>
+
+
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--android:id="@+id/single"-->
+       <!--android:layout_below="@+id/rl_title"-->
+        <!--/>-->
+</RelativeLayout>

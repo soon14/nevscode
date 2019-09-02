@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_car_rate"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.nevs.car.activity.CarRateActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/n_view"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_high"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="@dimen/back_margin"
+                android:layout_height="match_parent"
+                android:id="@+id/back"
+                android:background="@drawable/btn_bowen"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/head_back"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/title_image_back_left_margin"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textColor="@color/n_333333"
+                android:text="@string/car_rote"
+                android:textSize="@dimen/title_txt_size"/>
+
+            <LinearLayout
+                android:background="#c4c4c4"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/recycle"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rote_start"
+            android:textSize="14sp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/item_text_gray"
+            android:id="@+id/start"
+            android:background="@drawable/btn_bowens"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/n_cancle"
+            android:textSize="14sp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/item_text_gray"
+            android:id="@+id/backs"
+            android:background="@drawable/btn_bowens"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:text="@string/rote_hight"
+            android:textColor="@color/android_defalt"
+            android:textSize="14sp"
+            android:layout_toRightOf="@+id/start"
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@+id/backs"
+            android:layout_marginRight="10dp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        >
+        <com.nevs.car.tools.view.PickerScrollView
+            android:id="@+id/pickerscrlllview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/recycle" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+           android:layout_centerVertical="true"
+            android:background="@drawable/picker_tv_bg" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:id="@+id/center"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="km/h"
+            android:textColor="@color/text_data"
+           android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/center"
+            android:layout_marginLeft="30dp"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/rote_hint"
+        android:textSize="12sp"
+        android:textColor="@color/item_text_gray"
+        />
+</LinearLayout>

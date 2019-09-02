@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/dialog_circular"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dialog_tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textColor="@color/huise_9B"
+            android:text="@string/enterpindialog"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            />
+        <!-- android:textStyle="bold"-->
+        <LinearLayout
+            android:id="@+id/dialog_tv_contentd"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textColor="@color/huise_9B"
+            >
+            <EditText
+                android:id="@+id/dialog_tv_contentedit"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="5dp"
+                android:textColor="@color/huise_9B"
+                android:background="@drawable/ios_edit"
+                android:hint="@string/enterpindialogpin"
+                android:maxLength="8"
+                />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="#999"></View>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.35"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/dialog_right_tv"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="@color/text_default"
+                android:text="@string/comm_cancel"
+                />
+
+
+            <View
+                android:id="@+id/view_line"
+                android:layout_width="0.5dp"
+                android:layout_height="fill_parent"
+                android:background="#999"></View>
+
+
+            <TextView
+                android:id="@+id/dialog_left_tv"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="@color/text_default"
+                android:text="@string/comm_comfirm"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_my_notify"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nevs.car.activity.my.MyNotifyActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/n_view"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_high"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="@dimen/back_margin"
+                android:layout_height="match_parent"
+                android:id="@+id/back"
+                android:background="@drawable/btn_bowen"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/head_back"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/title_image_back_left_margin"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textColor="@color/n_333333"
+                android:text="@string/my_notify"
+                android:textSize="@dimen/title_txt_size"/>
+
+            <TextView
+                android:id="@+id/tv_do"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/title_image_back_left_margin"
+                android:gravity="center"
+                android:textColor="@color/title_center"
+                android:text="@string/editor"
+                android:textSize="@dimen/title_right_size"
+                android:background="@drawable/btn_bowen"
+                android:visibility="gone"
+                />
+
+            <LinearLayout
+                android:background="#c4c4c4"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+
+            android:id="@+id/rel_tell"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/listview_click">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/my_rzsz_dots"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/imageone"
+                android:visibility="gone"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/my_rzsz_dot"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/imageoneb"
+                android:visibility="gone"
+                />
+            <ImageView
+                android:id="@+id/imagemaycar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@mipmap/my_wdtz_gg"
+                android:layout_toRightOf="@+id/imageone"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imagemaycar"
+                android:gravity="center"
+                android:text="@string/nevs_notice"
+                android:textColor="#444444"
+                android:textSize="15sp"
+                android:id="@+id/tell"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:layout_toRightOf="@+id/tell"
+                android:layout_marginTop="5dp"
+                android:text="88"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@drawable/notify_cercle"
+                android:id="@+id/circleone"
+                android:visibility="gone"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/line"/>
+
+        <RelativeLayout
+
+            android:id="@+id/rel_message"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/listview_click">
+
+            <ImageView
+                android:id="@+id/imagemaycarpoot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@mipmap/my_wdtz_mes"
+                android:layout_toRightOf="@+id/imagetwo"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/my_rzsz_dots"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/imagetwo"
+                android:visibility="gone"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/my_rzsz_dot"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/imagetwob"
+                android:visibility="gone"
+                />
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_toRightOf="@+id/message"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@drawable/notify_msg"
+                android:id="@+id/circletwo"
+                android:visibility="gone"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="@string/nevs_message"
+                android:textColor="#444444"
+                android:textSize="15sp"
+                android:layout_toRightOf="@+id/imagemaycarpoot"
+                android:id="@+id/message" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/line"/>
+
+        <RelativeLayout
+
+            android:id="@+id/rel_love"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/listview_click">
+
+            <ImageView
+                android:id="@+id/imagemaycollect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@mipmap/my_wdtz_car"
+                android:layout_toRightOf="@+id/imagethree"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/my_rzsz_dots"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/imagethree"
+                android:visibility="gone"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/my_rzsz_dot"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/imagethreeb"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/love"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imagemaycollect"
+                android:gravity="center"
+                android:text="@string/nevs_loveinform"
+                android:textColor="#444444"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+              android:layout_toRightOf="@+id/love"
+                android:layout_marginTop="5dp"
+                android:text="88"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@drawable/notify_cercle"
+                android:id="@+id/circlethree"
+                android:visibility="gone"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/line"/>
+
+
+    </LinearLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/title_background"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/rel_visi"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title_center"
+            android:text="@string/nevs_clearall"
+            android:textSize="@dimen/title_right_size"
+            android:layout_alignBaseline="@+id/text_all"
+            android:layout_alignBottom="@+id/text_all"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="10dp"
+            android:id="@+id/textViewKill"
+            android:background="@drawable/btn_bowen"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title_center"
+            android:text="@string/nevs_readall"
+            android:layout_marginLeft="10dp"
+            android:textSize="@dimen/title_right_size"
+            android:id="@+id/text_all"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/btn_bowen"
+            />
+
+    </RelativeLayout>
+</RelativeLayout>
+
+</LinearLayout>

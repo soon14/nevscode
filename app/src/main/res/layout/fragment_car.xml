@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    >
+
+    <com.nevs.car.adapter.xrefreshview.XRefreshView
+        android:id="@+id/xrefresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <!-- timenext.setText("充电剩余时间："+listState.get(2)+"分钟");
+               battery.setText("电量:"+listState.get(1)+"%");
+               mileage.setText("电量续航:"+listState.get(3)+"KM");-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <!--111-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.5"
+                android:background="@drawable/n_gradient_shape"
+                android:orientation="vertical"
+                android:id="@+id/bar_view"
+                >
+                <RelativeLayout
+                    android:id="@+id/rl_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/title_high"
+                    >
+                    <ImageView
+                        android:id="@+id/pow_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/car_titlemagin"
+                        android:background="@mipmap/home_cl"
+                        android:visibility="gone"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_centerInParent="true"
+                        android:id="@+id/logBlue"
+                        android:textSize="@dimen/n_18sp"
+                        android:textColor="@color/n_333333"
+                        android:text="NEVS"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="55dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="false"
+                        android:background="@drawable/btn_bowen"
+                        android:id="@+id/right_image"
+                        >
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="@mipmap/clzy_clqh"
+                            />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@mipmap/phone22x"
+                        android:id="@+id/phone22x"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_centerVertical="true"
+                        android:text="@string/helpphone"
+                        android:textColor="@color/n_333333"
+                        android:textSize="10sp"
+                        android:background="@drawable/btn_bowen"
+                        />
+
+                </RelativeLayout>
+                <!--ccc-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+                   <RelativeLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="0dp"
+                       android:layout_weight="1"
+                       ></RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.6"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:id="@+id/image_type"
+                                    android:layout_width="2dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="29dp"
+                                    android:background="@mipmap/zc_zht"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/car_type"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginLeft="9dp"
+                                    android:layout_marginBottom="3dp"
+                                    android:layout_toRightOf="@+id/image_type"
+                                    android:gravity="top"
+                                    android:text="--"
+                                    android:textColor="@color/n_333333"
+                                    android:textSize="18sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:textColor="@color/n_777777"
+                                    android:textSize="12sp"
+                                    android:text="@string/n_state_car"
+                                    android:layout_marginLeft="9dp"
+                                    android:layout_toRightOf="@+id/image_type"
+                                    />
+
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:layout_width="2dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@mipmap/zc_zht"
+                                    android:layout_marginLeft="15dp"
+                                    android:id="@+id/img_cen"
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/n_777777"
+                                    android:text="@string/n_chargenext"
+                                    android:textSize="12sp"
+                                    android:id="@+id/hint_charge"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_toRightOf="@+id/img_cen"
+                                    android:layout_marginLeft="9dp"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/battery"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignLeft="@+id/hint_charge"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginBottom="-3dp"
+                                    android:gravity="bottom"
+                                    android:layout_toRightOf="@+id/img_cen"
+                                    android:layout_marginLeft="9dp"
+                                    android:text="--%"
+                                    android:textColor="@color/n_333333"
+                                    android:textSize="28sp" />
+                            </RelativeLayout>
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent">
+                                <ImageView
+                                    android:layout_width="2dp"
+                                    android:layout_height="match_parent"
+                                   android:layout_marginLeft="10dp"
+                                    android:background="@mipmap/zc_zht"
+                                    android:id="@+id/right_n"
+                                    />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/n_777777"
+                                    android:text="@string/main_keeps"
+                                    android:textSize="12sp"
+                                    android:id="@+id/hint_keeps"
+                                    android:layout_toRightOf="@+id/right_n"
+                                    android:layout_marginLeft="9dp"
+                                    android:layout_alignParentTop="true"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/mileage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignLeft="@+id/hint_keeps"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginBottom="-3dp"
+                                    android:gravity="bottom"
+                                    android:text="--km"
+                                    android:textColor="@color/n_333333"
+                                    android:textSize="28sp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+
+
+
+
+
+
+                        </RelativeLayout>
+
+
+
+
+                    <!--ccc-->
+                    
+
+                    
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3"
+                            android:background="@mipmap/n_lines"
+                            ></RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            ></RelativeLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@mipmap/n_lines"
+                            ></RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="4"
+                            >
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@mipmap/n_noline"
+                                android:id="@+id/iamge_car"
+                                android:layout_centerVertical="true"
+                                android:clickable="true"
+                                />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@mipmap/phone12x"
+                        android:id="@+id/phone12x"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/servicephone"
+                        android:textColor="@color/main_chage"
+                        android:textSize="12sp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/btn_bowen"
+                        android:visibility="gone"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/white"
+                            android:id="@+id/timenext"
+                            android:layout_below="@+id/image_type"
+                            android:text="@string/nevs_chargeresidual"
+                            android:textSize="10sp"
+                            android:visibility="gone"
+                            />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+
+
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/clzy_line"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    />
+
+            </LinearLayout>
+            <!--222-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/main_bottom"
+                    >
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="22dp"
+                        android:layout_marginBottom="22dp"
+                        android:layout_weight="1"
+                        >
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@mipmap/n_bg_gra"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="4dp"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableTop="@drawable/main_one"
+                                android:text="@string/car_control"
+                                android:textColor="@color/n_333333"
+                                android:textSize="12sp"
+                                android:gravity="center_horizontal"
+                                android:drawablePadding="@dimen/top_drawble"
+                                android:id="@+id/longcontrol"
+                                android:layout_centerInParent="true"
+                                />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/img_selec_bag"
+                                android:id="@+id/n_one"
+                                />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="22dp"
+                        android:layout_marginBottom="22dp"
+                        android:layout_weight="1"
+                        >
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@mipmap/n_bg_gra"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="4dp"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableTop="@drawable/main_two"
+                            android:textColor="@color/n_333333"
+                            android:textSize="12sp"
+                            android:text="@string/car_air"
+                            android:gravity="center_horizontal"
+                            android:drawablePadding="@dimen/top_drawble"
+                            android:paddingTop="6dp"
+                            android:id="@+id/airorder"
+                            android:layout_centerInParent="true"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/img_selec_bag"
+                            android:id="@+id/n_two"
+                            />
+                    </RelativeLayout>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="22dp"
+                        android:layout_marginBottom="22dp"
+                        android:layout_weight="1"
+                        >
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@mipmap/n_bg_gra"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="4dp"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableTop="@drawable/main_three"
+                            android:textColor="@color/n_333333"
+                            android:textSize="12sp"
+                            android:text="@string/car_charge"
+                            android:paddingTop="6dp"
+                            android:gravity="center_horizontal"
+                            android:drawablePadding="@dimen/top_drawble"
+                            android:id="@+id/chargemanager"
+                            android:layout_centerInParent="true"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/img_selec_bag"
+                            android:id="@+id/n_three"
+                            />
+                    </RelativeLayout>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="22dp"
+                        android:layout_marginBottom="22dp"
+                        android:layout_weight="1"
+                        >
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@mipmap/n_bg_gra"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="4dp"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableTop="@drawable/main_four"
+                            android:textColor="@color/n_333333"
+                            android:textSize="12sp"
+                            android:text="@string/car_health"
+                            android:paddingTop="14dp"
+                            android:gravity="center_horizontal"
+                            android:drawablePadding="@dimen/top_drawble"
+                            android:id="@+id/carhealth"
+                            android:layout_centerInParent="true"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/img_selec_bag"
+                            android:id="@+id/n_four"
+                            />
+                    </RelativeLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </com.nevs.car.adapter.xrefreshview.XRefreshView>
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">uilibrary</string>
+    <string name="ui_date">Date</string>
+    <string name="ui_cancel">Cancel</string>
+    <string name="ui_save">Save</string>
+    <string name="ui_select_date">Select date</string>
+    <string name="ui_title">Title</string>
+    <string name="ui_loading">Loading...</string>
+    <string name="ui_year">%s y</string>
+    <string name="ui_month">%s M</string>
+    <string name="ui_day">%s d</string>
+    <string name="ui_hour">%s H</string>
+    <string name="ui_minute">%s m</string>
+    <string name="ui_second">%s </string>
+</resources>

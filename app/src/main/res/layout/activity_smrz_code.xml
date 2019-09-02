@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_smrz_code"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  android:orientation="vertical"
+    tools:context="com.nevs.car.activity.SmrzCodeActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/n_view"
+        android:background="@color/white"
+        >
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_high"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="@dimen/back_margin"
+                android:layout_height="match_parent"
+                android:id="@+id/back"
+                android:background="@drawable/btn_bowen"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/head_back"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/title_image_back_left_margin"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:textColor="@color/n_333333"
+                android:text="@string/re_code"
+                android:textSize="@dimen/title_txt_size"/>
+
+            <LinearLayout
+                android:background="#c4c4c4"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/smrz_tip"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/image_tip"
+            android:layout_alignTop="@+id/text_tip"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/item_text_gray"
+            android:text="@string/smrz_hint"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/image_tip"
+            android:id="@+id/text_tip"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/width_line_one"
+        android:background="@color/line"
+        android:layout_marginLeft="@dimen/margin_left_line"
+        android:layout_marginTop="10dp"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/smrz_yzm"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/image_gzm"
+            />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/edit_height"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/layout_editnull"
+            android:cursorVisible="false"
+            android:textColor="@color/text_default"
+            android:textColorHint="@color/line"
+            android:hint="@string/re_code"
+            android:id="@+id/edit_code"
+            android:gravity="center_vertical"
+            android:digits="0123456789"
+            android:layout_toRightOf="@+id/image_gzm"
+            android:layout_centerVertical="true"
+            android:maxLength="8"
+            />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_circle_rect_code"
+            android:textColor="@color/text_getmessage"
+            android:gravity="center"
+            android:layout_marginRight="20dp"
+            android:id="@+id/btn_code"
+            android:text="@string/getcode"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line"
+        android:layout_marginLeft="@dimen/margin_left_line"
+        />
+
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_text"
+        android:layout_marginLeft="@dimen/marginleft_btn"
+        android:layout_marginRight="@dimen/marginright_btn"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="@string/submit"
+        android:textSize="@dimen/btn"
+        android:clickable="true"
+        android:background="@drawable/btn_press"
+        android:id="@+id/btn_create"
+        />
+</LinearLayout>

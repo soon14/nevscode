@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/cdeng2"
+        android:duration="50"/>
+    <item
+        android:drawable="@drawable/cdeng3"
+        android:duration="50"/>
+    <item
+        android:drawable="@drawable/cdeng4"
+        android:duration="50"/>
+    <item
+        android:drawable="@drawable/cdeng5"
+        android:duration="50"/>
+    <!--<item-->
+        <!--android:drawable="@drawable/alpha5"-->
+        <!--android:duration="50"/>-->
+
+
+    <!--<item-->
+        <!--android:drawable="@drawable/cdeng2"-->
+        <!--android:duration="50"/>-->
+    <!--<item-->
+        <!--android:drawable="@drawable/cdeng3"-->
+        <!--android:duration="50"/>-->
+    <!--<item-->
+        <!--android:drawable="@drawable/cdeng4"-->
+        <!--android:duration="50"/>-->
+    <!--<item-->
+        <!--android:drawable="@drawable/cdeng5"-->
+        <!--android:duration="50"/>-->
+    <!--<item-->
+        <!--android:drawable="@drawable/cdeng6"-->
+        <!--android:duration="50"/>-->
+</animation-list>

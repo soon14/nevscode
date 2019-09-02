@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_title"
+        >
+        <com.nevs.car.adapter.xrefreshview.XRefreshView
+            android:id="@+id/xrefresh_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/recycle">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/recycle"
+                android:scrollbars="vertical" />
+        </com.nevs.car.adapter.xrefreshview.XRefreshView>
+        <include layout="@layout/public404"/>
+    </RelativeLayout>
+
+</LinearLayout>

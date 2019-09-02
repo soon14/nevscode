@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 按压后的背景 -->
+    <item android:state_pressed="true">
+        <shape>
+            <!--填充-->
+            <solid android:color="@color/bg_transparent_half" />
+            <!--圆角-->
+            <corners android:radius="4dp" />
+        </shape>
+
+    </item>
+    <!-- 选择后的背景 -->
+    <item android:state_activated="true">
+        <shape>
+            <solid android:color="@color/bg_transparent_half" />
+            <corners android:radius="4dp" />
+        </shape>
+
+    </item>
+    <!-- 默认的背景 -->
+    <item>
+        <shape>
+            <solid android:color="@color/bg_transparent_half" />
+            <!--<stroke android:_width="1dp" android:color="#C1C0B7" />-->
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+</selector>

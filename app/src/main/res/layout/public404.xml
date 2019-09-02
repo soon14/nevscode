@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/white"
+    android:visibility="gone"
+    android:clickable="true"
+    android:id="@+id/public404"
+    >
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/public404"
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#637862"
+        android:text="@string/nevs_activitygone"
+        android:textSize="22sp"
+        android:layout_marginTop="40dp"
+        />
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#cbd1cb"
+    android:text="@string/nevs_refreshtext"
+    android:textSize="18sp"
+    android:layout_marginTop="10dp"
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_select"
+        android:text="@string/nevs_refresh"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_select"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:id="@+id/refresh"
+        />
+</LinearLayout>

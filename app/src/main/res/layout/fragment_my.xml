@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="@color/white"
+    android:id="@+id/view_bar"
+    >
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_high"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/n_333333"
+            android:text="@string/my_center"
+            android:textSize="@dimen/title_txt_size"/>
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:id="@+id/rel_zxing"
+            android:background="@drawable/btn_bowen"
+            android:visibility="gone"
+            >
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/my_grzx_sm"
+                android:id="@+id/zxing"
+                android:layout_marginRight="20dp"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:background="#c4c4c4"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:visibility="gone"
+            />
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/n_F9F9F9"
+        >
+
+            <ScrollView
+                android:id="@+id/srollview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="185dp"
+                        android:orientation="vertical"
+                        android:background="@mipmap/n_lines"
+                        >
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:id="@+id/centeruser"
+                            >
+
+                                <com.nevs.car.tools.view.CircleImageView
+                                    android:id="@+id/user_icon"
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:background="@mipmap/n_my_default"/>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_toRightOf="@+id/user_icon"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/user_name"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:text="@string/nevs_user"
+                                        android:textColor="@color/n_333333"
+                                        android:textSize="15sp"
+                                        />
+
+                                    <!--<TextView-->
+                                        <!--android:id="@+id/user_phone"-->
+                                        <!--android:layout_width="0dp"-->
+                                        <!--android:layout_height="0dp"-->
+                                        <!--android:layout_marginTop="5dp"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:text="@string/re_phonenumber"-->
+                                        <!--android:textColor="#444444"-->
+                                        <!--android:textSize="0sp"-->
+                                        <!--android:visibility="gone"-->
+                                        <!--/>-->
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/user_imagebutten"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="15dp"
+                                    android:background="@drawable/n_gray_emp"
+                                    android:gravity="center"
+                                    android:padding="10dp"
+                                    android:textSize="10sp"
+                                    android:text="@string/n_edit"
+                                    android:textColor="@color/n_434343"/>
+
+
+                        </RelativeLayout>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="85dp"
+                            android:orientation="horizontal"
+                            >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_marginRight="12dp"
+    android:layout_marginLeft="12dp"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/n_my_gra"
+    >
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:id="@+id/n_notify"
+        android:background="@drawable/btn_bowen"
+        >
+        <TextView
+            android:id="@+id/notify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="15dp"
+            android:drawableTop="@mipmap/my_grzx_wdtz"
+            android:gravity="center"
+            android:text="@string/my_notify"
+            android:textColor="@color/n_777777"
+            android:textSize="10sp"
+            android:background="@drawable/btn_bowen"
+            android:layout_centerInParent="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/centeris"
+            android:layout_centerInParent="true"
+            />
+        <TextView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_toRightOf="@+id/centeris"
+            android:layout_alignTop="@+id/notify"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/notify_cercle"
+            android:id="@+id/circleis"
+            android:layout_marginLeft="5dp"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="29dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/n_E5E5E5"
+        />
+
+    <TextView
+        android:id="@+id/orders"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:drawablePadding="18dp"
+        android:drawableTop="@mipmap/my_grzx_wdyy"
+        android:gravity="center"
+        android:text="@string/my_order"
+        android:textColor="@color/n_777777"
+        android:textSize="10sp"
+        android:background="@drawable/btn_bowen"
+        />
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="29dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/n_E5E5E5"
+        />
+    <TextView
+        android:id="@+id/service"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:drawablePadding="15dp"
+        android:drawableTop="@mipmap/my_grzx_wdwx"
+        android:gravity="center"
+        android:text="@string/my_service"
+        android:textColor="@color/n_777777"
+        android:textSize="10sp"
+        android:background="@drawable/btn_bowen"
+
+        />
+
+</LinearLayout>
+</LinearLayout>
+
+                    </LinearLayout>
+
+
+
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+
+                            android:id="@+id/mycar"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/listview_click">
+
+                            <ImageView
+                                android:id="@+id/imagemaycar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="20dp"
+                                android:background="@mipmap/my_grzx_wdcl"
+                               />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="55dp"
+                                android:layout_toRightOf="@+id/imagemaycar"
+                                android:gravity="center"
+                                android:text="@string/my_car"
+                                android:textColor="@color/n_333333"
+                                android:textSize="14sp"
+                                android:layout_marginLeft="20dp"
+                                />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="20dp"
+                                android:background="@mipmap/my_grzx_lmore"/>
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="50dp"
+                            android:background="@color/line"/>
+
+                        <RelativeLayout
+
+                            android:id="@+id/mydrive"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/listview_click"
+                            android:visibility="gone"
+                            >
+
+                            <ImageView
+                                android:id="@+id/imagemaycarpoot"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="20dp"
+                                android:background="@mipmap/my_grzx_wdjz"
+                                />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="20dp"
+                                android:background="@mipmap/my_grzx_lmore"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="55dp"
+                                android:layout_marginLeft="10dp"
+                                android:gravity="center"
+                                android:text="@string/my_drive"
+                                android:textColor="#444444"
+                                android:textSize="15sp"
+                                android:layout_toRightOf="@+id/imagemaycarpoot"
+                                android:id="@+id/textView2" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="50dp"
+                            android:background="@color/line"
+                            android:visibility="gone"
+                            />
+
+                        <RelativeLayout
+
+                            android:id="@+id/carcopy"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/listview_click">
+
+                            <ImageView
+                                android:id="@+id/imagemaycollect"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="20dp"
+                                android:background="@mipmap/my_grzx_xcjl"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="55dp"
+                                android:layout_toRightOf="@+id/imagemaycollect"
+                                android:gravity="center"
+                                android:text="@string/car_copy"
+                                android:textColor="@color/n_333333"
+                                android:textSize="14sp"
+                                android:layout_marginLeft="20dp"
+                                />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="20dp"
+                                android:background="@mipmap/my_grzx_lmore"/>
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="50dp"
+                            android:background="@color/line"
+                            android:id="@+id/carcopeline"
+                            android:orientation="horizontal"
+                            />
+
+                        <RelativeLayout
+
+                            android:id="@+id/safe0"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/listview_click"
+                            android:visibility="gone"
+                            >
+
+                            <ImageView
+                                android:id="@+id/imagemaybill0"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="20dp"
+                                android:background="@mipmap/my_grzx_gzjy"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="55dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/imagemaybill0"
+                                android:gravity="center"
+                                android:text="@string/sefe"
+                                android:textColor="#444444"
+                                android:textSize="15sp"
+                                />
+
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_alignParentRight="true"-->
+                                <!--android:layout_centerVertical="true"-->
+                                <!--android:layout_marginRight="20dp"-->
+                                <!--android:text="400-xxx-xxx"-->
+                                <!--android:textSize="14sp"-->
+                                <!--android:textColor="#c3c4c3"-->
+                                <!--/>-->
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@mipmap/register_phone"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="20dp"
+                                />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="50dp"
+                            android:background="@color/line"
+                            android:visibility="gone"
+                            />
+
+
+                        <RelativeLayout
+
+                            android:id="@+id/safe"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/listview_click"
+                            android:visibility="gone"
+                            >
+
+                            <ImageView
+                                android:id="@+id/imagemaybill"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="20dp"
+                                android:background="@mipmap/fw_home05"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="55dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/imagemaybill"
+                                android:gravity="center"
+                                android:text="@string/nevs_counseling"
+                                android:textColor="#444444"
+                                android:textSize="15sp"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="20dp"
+                                android:text="400-400-4400"
+                                android:textSize="14sp"
+                                android:textColor="#c3c4c3"
+                                android:id="@+id/hotline"
+                                />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="50dp"
+                            android:background="@color/line"
+                            android:visibility="gone"
+                            />
+                        <!--cc1-->
+                        <RelativeLayout
+
+                            android:id="@+id/datas"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/listview_click"
+                            android:visibility="visible"
+                            >
+
+                            <ImageView
+                                android:id="@+id/imagemaycarpoot00"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="20dp"
+                                android:background="@mipmap/my_grzx_llcx"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="55dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_toRightOf="@+id/imagemaycarpoot00"
+                                android:gravity="center"
+                                android:text="@string/datas"
+                                android:textColor="@color/n_333333"
+                                android:textSize="14sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="20dp"
+                                android:background="@mipmap/my_grzx_lmore"/>
+                        </RelativeLayout>
+                        <!--2cc-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="50dp"
+                            android:background="@color/line"
+                            android:visibility="visible"
+                            />
+
+                        <RelativeLayout
+
+                            android:id="@+id/setting"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/listview_click">
+
+                            <ImageView
+                                android:id="@+id/imagemaycarpoots"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="20dp"
+                                android:background="@mipmap/my_grzx_set"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="55dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_toRightOf="@+id/imagemaycarpoots"
+                                android:gravity="center"
+                                android:text="@string/settings"
+                                android:textColor="@color/n_333333"
+                                android:textSize="14sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="20dp"
+                                android:background="@mipmap/my_grzx_lmore"/>
+                        </RelativeLayout>
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+
+                            android:id="@+id/userspeak"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/listview_click">
+
+                            <ImageView
+                                android:id="@+id/imagemaycarpoo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="20dp"
+                                android:background="@mipmap/my_grzx_yhfk"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="55dp"
+                                android:layout_toRightOf="@+id/imagemaycarpoo"
+                                android:gravity="center"
+                                android:text="@string/user_speak"
+                                android:textColor="@color/n_333333"
+                                android:textSize="14sp"
+                                android:layout_marginLeft="20dp"
+                                />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="20dp"
+                                android:background="@mipmap/my_grzx_lmore"/>
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="50dp"
+                            android:background="@color/line"/>
+
+                        <RelativeLayout
+
+                            android:id="@+id/share"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/listview_click">
+
+                            <ImageView
+                                android:id="@+id/imagemaycarpoot0"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="20dp"
+                                android:background="@mipmap/my_grzx_share"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="55dp"
+                                android:layout_toRightOf="@+id/imagemaycarpoot0"
+                                android:gravity="center"
+                                android:text="@string/shareto"
+                                android:textColor="@color/n_333333"
+                                android:textSize="14sp"
+                                android:layout_marginLeft="20dp"
+                                />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="20dp"
+                                android:background="@mipmap/my_grzx_lmore"/>
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="50dp"
+                            android:background="@color/line"/>
+
+                        <RelativeLayout
+
+                            android:id="@+id/about"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/listview_click">
+
+                            <ImageView
+                                android:id="@+id/imagemaycars"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="20dp"
+                                android:background="@mipmap/my_grzx_about"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="55dp"
+                                android:layout_toRightOf="@+id/imagemaycars"
+                                android:gravity="center"
+                                android:text="@string/about"
+                                android:textColor="@color/n_333333"
+                                android:textSize="14sp"
+                                android:layout_marginLeft="20dp"
+                                />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="20dp"
+                                android:background="@mipmap/my_grzx_lmore"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/bg_transparent"
+            android:visibility="gone"/>
+
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/user_phone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="@string/re_phonenumber"
+        android:textColor="#444444"
+        android:textSize="0sp"
+        android:visibility="gone"
+        />
+</LinearLayout>
